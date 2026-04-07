@@ -4,7 +4,7 @@ title: Malware Analysis: Ghost Backdoor - ULTRA DETAILED Linux RAT Deep Dive
 date: 2026-04-07 20:30:00 +0900
 categories: [Malware Analysis]
 tags: [Malware, Linux, RAT, Reverse-Engineering, Static-Analysis, Dynamic-Analysis, YARA, Evasion]
-author: Stalin S(w4nn4d13)
+author: stalin_s
 ---
 
 ## 🧾 Introduction
