@@ -105,16 +105,29 @@ cdn: "https://chirpy-img.netlify.app"
 # the avatar on sidebar, support local or CORS resources
 avatar: "https://github.com/Stalin-143.png"
 
+favicon_setup:
+  source: "https://github.com/Stalin-143.png"
+  generate_all_sizes: true
+  files:
+    - assets/img/favicons/favicon-16x16.png
+    - assets/img/favicons/favicon-32x32.png
+    - assets/img/favicons/apple-touch-icon.png
+    - assets/img/favicons/android-chrome-192x192.png
+    - assets/img/favicons/android-chrome-512x512.png
+    - assets/img/favicons/favicon.ico
+
 branding:
   avatar_shape: circle
-  favicon_shape: circle
+  favicon_shape: circle_visual
   use_github_avatar: true
   favicon_source: github
+  note: "Favicons are square but use transparent background for circular appearance"
   fallback_local_path: "/assets/img/favicon.png"
 
 ui_customization:
-  avatar_css: "border-radius: 50%; width: 120px; height: 120px; object-fit: cover;"
+  avatar_css: "border-radius: 50%; object-fit: cover;"
   favicon_css: "border-radius: 50%;"
+  header_icon_css: "border-radius: 50%;"
   header_logo_style: "border-radius: 50%; box-shadow: 0 0 10px rgba(0,255,150,0.5);"
 
 theme_color: "#0a0a0a"
