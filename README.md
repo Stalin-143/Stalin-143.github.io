@@ -1,6 +1,6 @@
 # BLOG
 
-This is my cybersecurity blog page
+This is my cybersecurity blog page.
 
 ## Author
 
