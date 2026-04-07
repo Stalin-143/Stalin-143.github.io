@@ -5,10 +5,23 @@
 
 {% capture favicon_path %}{{ '/assets/img/favicons' | relative_url }}{% endcapture %}
 
-<link rel="icon" type="image/png" href="{{ favicon_path }}/favicon-96x96.png" sizes="96x96">
-<link rel="icon" type="image/svg+xml" href="{{ favicon_path }}/favicon.svg">
-<link rel="shortcut icon" href="{{ favicon_path }}/favicon.ico">
-<link rel="apple-touch-icon" sizes="180x180" href="{{ favicon_path }}/apple-touch-icon.png">
+{% assign favicon_url = site.favicon %}
+{% if site.branding.use_github_avatar and site.branding.favicon_source == 'github' and site.avatar and site.avatar != empty %}
+  {% assign favicon_url = site.avatar %}
+{% endif %}
+{% assign favicon_url = favicon_url | default: site.branding.fallback_local_path %}
+{% if favicon_url and favicon_url != empty and favicon_url contains '://' %}
+  {% assign favicon_icon = favicon_url %}
+{% elsif favicon_url and favicon_url != empty %}
+  {% assign favicon_icon = favicon_url | relative_url %}
+{% else %}
+  {% assign favicon_icon = favicon_path | append: '/favicon-96x96.png' %}
+{% endif %}
+
+<link rel="icon" type="image/png" href="{{ favicon_icon }}" sizes="96x96">
+<link rel="icon" type="image/png" href="{{ favicon_icon }}">
+<link rel="shortcut icon" href="{{ favicon_icon }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ favicon_icon }}">
 {% if site.pwa.enabled %}
   <link rel="manifest" href="{{ favicon_path }}/site.webmanifest">
 {% endif %}

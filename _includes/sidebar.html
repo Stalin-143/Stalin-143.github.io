@@ -7,7 +7,19 @@
         {%- capture avatar_url -%}
           {% include media-url.html src=site.avatar %}
         {%- endcapture -%}
-        <img src="{{- avatar_url -}}" width="112" height="112" alt="avatar" onerror="this.style.display='none'">
+        {%- capture avatar_style -%}
+          {{ site.ui_customization.avatar_css }} {{ site.ui_customization.header_logo_style }}
+        {%- endcapture -%}
+        {%- assign avatar_style = avatar_style | strip -%}
+        <img
+          src="{{- avatar_url -}}"
+          width="112"
+          height="112"
+          alt="avatar"
+          class="{% if site.branding.avatar_shape == 'circle' %}rounded-circle{% endif %}"
+          {% if avatar_style != empty %}style="{{ avatar_style }}"{% endif %}
+          onerror="this.style.display='none'"
+        >
       {%- endif -%}
     </a>
 
