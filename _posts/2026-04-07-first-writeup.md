@@ -3,7 +3,7 @@ title: CVE-2026-29905 - Kirby CMS Persistent DoS via Malformed Image Upload
 date: 2026-04-07 12:30:00 +0900
 categories: ["CVE Research"]
 tags: [CVE, CVE-2026-29905, Vulnerability-Research, Web-Security, Denial-of-Service]
-author: stalin_s
+author: [stalin_s]
 ---
 
 ![CVE](https://img.shields.io/badge/CVE-2026--29905-red)
