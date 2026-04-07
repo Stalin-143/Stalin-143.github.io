@@ -10,6 +10,27 @@
     content="width=device-width, user-scalable=no initial-scale=1, shrink-to-fit=no, viewport-fit=cover"
   >
 
+  <script>
+    (function () {
+      var oldHost = 'stalin-143.github.io';
+      var newHost = 'w4nn4d13.tech';
+
+      if (window.location.hostname.toLowerCase() !== oldHost) {
+        return;
+      }
+
+      var target =
+        window.location.protocol +
+        '//' +
+        newHost +
+        window.location.pathname +
+        window.location.search +
+        window.location.hash;
+
+      window.location.replace(target);
+    })();
+  </script>
+
   {%- capture seo_tags -%}
     {% seo title=false %}
   {%- endcapture -%}
