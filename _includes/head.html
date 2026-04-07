@@ -14,16 +14,22 @@
     (function () {
       var oldHost = 'stalin-143.github.io';
       var newHost = 'w4nn4d13.tech';
+      var oldBasePath = '/BLOG';
 
       if (window.location.hostname.toLowerCase() !== oldHost) {
         return;
+      }
+
+      var pathname = window.location.pathname;
+      if (pathname === oldBasePath || pathname.indexOf(oldBasePath + '/') === 0) {
+        pathname = pathname.slice(oldBasePath.length) || '/';
       }
 
       var target =
         window.location.protocol +
         '//' +
         newHost +
-        window.location.pathname +
+        pathname +
         window.location.search +
         window.location.hash;
 
