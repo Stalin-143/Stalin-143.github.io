@@ -1,5 +1,8 @@
 name: Deploy Jekyll site to Pages
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
   push:
     branches: ["main"]
@@ -31,6 +34,17 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Build frontend assets
+        run: |
+          npm install --ignore-scripts
+          npm run build
 
       - name: Build site
         env:
